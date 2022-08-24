@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Urbanist";
+  src: url('./Fonts/Urbanist-Regular.woff2');
+}
+@font-face {
+  font-family: "UrbanistSemiBold";
+  src: url('./Fonts/Urbanist-SemiBold.woff2');
+}
+@font-face {
+  font-family: "UrbanistBold";
+  src: url('./Fonts/Urbanist-Bold.woff2');
+}
+@font-face {
+  font-family: "UrbanistThin";
+  src: url('./Fonts/Urbanist-Thin.woff2');
+}
+@font-face {
+  font-family: "UrbanistMedium";
+  src: url('./Fonts/Urbanist-Medium.woff2');
+}
+
+* { font-family: "Urbanist"; }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background-color: #0c0b13;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  background-color: rgb(242, 240, 255);
+  border-radius: 15px;
+  width: 23%;
+  padding: 2rem;
+  box-shadow: 0px 0px 16px -3px rgba(255, 255, 255, 0.2);
+}
+
+.formContainer h2{
+  text-align: center;
+  font-size: 32px;
+  margin-top: 0;
+}
+
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+  /*margin: 0 7rem;*/
+}
+
+.formContainer .formItem {
+  display: flex;
+  flex-direction: column;
+  margin: 1.25rem 0;
+  text-align: left;
+  justify-content: center;
+}
+.formContainer .formItem label{
+  font-family: "UrbanistMedium";
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.formContainer .formItem input, .formContainer .formItem textarea {
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  resize: none;
+  padding: 8px 10px;
+
+  box-shadow: 0px 0px 16px -3px rgba(0,0,0,0.14);
+}
+.formContainer .formItem input:focus-visible, .formContainer .formItem textarea:focus-visible{
+  outline: none;
+}
+
+.formContainer .formItem button {
+  color: white;
+  background-color: #0c0b13;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  width: fit-content;
+  padding: 10px 28px;
+  align-self: center;
+  font-family: "UrbanistSemiBold";
+  border: none;
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.18);
+  transition: all ease-in-out  135ms;
+}
+.formContainer .formItem button:hover { transform: scale(1.06); }
+.formContainer .formItem button:active { background-color: #14121f; }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("titulo", 255);
             $table->string("slug", 255);
+            $table->text("description", 255);
             $table->text("content");
             $table->string("image", 255);
             $table->enum("posted", ['yes', 'not']);
