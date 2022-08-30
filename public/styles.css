@@ -93,3 +93,23 @@ body {
 }
 .formContainer .formItem button:hover { transform: scale(1.06); }
 .formContainer .formItem button:active { background-color: #14121f; }
+
+
+.success, .error {
+  margin: 15px;
+  width: fit-content;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-family: "UrbanistSemiBold";
+}
+
+.success {
+  align-self: center;
+  color: #264b2b;
+  background-color: #a0ffad;
+}
+.error {
+  align-self: left;
+  color: #4b2626;
+  background-color: #ffa0a0;
+}
