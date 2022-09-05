@@ -20,8 +20,8 @@ class postcontroller extends Controller
    */
   public function index()
   {
-    //
-    echo "Hola mundo";
+    $posts = post::orderBy('created_at', 'desc')->cursorpaginate(5);
+    echo view('Dashboard.Post.index', ['posts' => $posts]);
   }
 
   /**
@@ -31,7 +31,6 @@ class postcontroller extends Controller
    */
   public function create()
   {
-    //
     echo view('Dashboard.Post.create');
   }
 
@@ -43,7 +42,7 @@ class postcontroller extends Controller
    */
   public function store(StorePostPost $request)
   {
-    Post::create($request->validated());
+    post::create($request->validated());
     return back()->with('status', 'Se creo el post correctamente');
     //return redirect("post/create")->with('status', 'Post creado');
   }

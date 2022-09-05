@@ -20,4 +20,4 @@ Route::resource('categories', categoriescontroller::class);
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');

@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string("titulo", 255);
+            $table->string("title", 255);
             $table->string("slug", 255);
-            $table->text("description", 255);
+            $table->text("description", 255)->nullable();
             $table->text("content");
-            $table->string("image", 255);
-            $table->enum("posted", ['yes', 'not']);
+            $table->string("image", 255)->nullable();
+            $table->enum("posted", ['yes', 'not'])->nullable();
             $table->timestamps();
         });
     }

@@ -15,7 +15,8 @@ class categoriescontroller extends Controller
      */
     public function index()
     {
-        //
+        $cats = categories::orderBy('created_at', 'desc')->cursorpaginate(5);
+        echo view('Dashboard.Categories.index', ['cats' => $cats]);
     }
 
     /**
@@ -37,7 +38,12 @@ class categoriescontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|min:5|max:255',
+            'slug' => 'required|min:5|max:255'
+        ]);
+        categories::create($validated);
+        return back()->with('status', 'Se creo el post correctamente');
     }
 
     /**
