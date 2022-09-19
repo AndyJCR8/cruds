@@ -56,7 +56,7 @@ class postcontroller extends Controller
   public function show(post $post)
   {
     //
-    echo ("Post value: " + $post);
+    echo view("Dashboard.Post.show", ['post' => $post]);
   }
 
   /**

@@ -45,7 +45,7 @@
                   {{$post->updated_at->format('d-m-Y')}}
                 </td>
                 <td>
-                  <a class="btn btn-primary">ver</a>
+                  <a href="{{route("post.show", $post->id)}}" class="btn btn-primary">ver</a>
                   <a class="btn btn-warning">editar</a>
                   <a class="btn btn-danger">eliminar</a>
                 </td>
