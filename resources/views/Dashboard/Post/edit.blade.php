@@ -8,25 +8,23 @@
   @include("Dashboard.Partials.bootstrap-import")
   
   <link rel="stylesheet" href="{{ asset('styles.css') }}">
-  <title>Crud</title>
+  <title>Actualizar post</title>
 </head>
 
 <body>
   @include('Dashboard.Partials.nav-header-main')
   <div class="bodyContainer">
-    @csrf
-    <div class="show-data-container container w-100">
-      <div class="d-flex flex-column justify-content-center align-items-center text-center w-100">
-        <h2>Visualizar post</h2>
-      </div>
-      <div class="info w-25">
-        <p>{{$post->title}}</p>
-        <p>{{$post->slug}}</p>
-        <p>{{$post->content}}</p>
-        <p>{{$post->description}}</p>
-      </div>
+    <div class="formContainer">
+      <h2>Actualizar post</h3>
+        {{--
+          SE LE DEBE MANDAR EL POST A LA RUTA PARA QUE FUNCIONE EL MÉTODO
+          UPDATE EN EL CONTROLADOR
+        --}}
+      <form action="{{route('post.update', $post->id)}}" method="post">
+        @method("PUT")
+        @include('Dashboard.Partials._form')
+      </form>
     </div>
   </div>
 </body>
-
 </html>

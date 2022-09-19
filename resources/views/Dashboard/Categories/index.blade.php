@@ -27,27 +27,27 @@
               <td>Acciones</td>
             </tr>
           </tbody>
-          @foreach ($cats as $cat)
+          @foreach ($cats as $categories)
               <tr>
                 <td>
-                  {{$cat->id}}
+                  {{$categories->id}}
                 </td>
                 <td>
-                  {{$cat->title}}
+                  {{$categories->title}}
                 </td>
                 <td>
-                  {{$cat->slug}}
+                  {{$categories->slug}}
                 </td>
                 <td>
-                  {{$cat->created_at->format('d-m-Y')}}
+                  {{$categories->created_at->format('d/m/Y')}}
                 </td>
                 <td>
-                  {{$cat->updated_at->format('d-m-Y')}}
+                  {{$categories->updated_at->format('d/m/Y')}}
                 </td>
-                <td>
-                  <a class="btn btn-primary">ver</a>
-                  <a class="btn btn-warning">editar</a>
-                  <a class="btn btn-danger">eliminar</a>
+                <td class="d-flex justify-content-center align-items-center">
+                  <a href="{{route("categories.show", $categories->id)}}" class="btn btn-primary">ver</a>
+                  <a href="{{route("categories.edit", $categories->id)}}" class="btn btn-warning">editar</a>
+                  <a  class="btn btn-danger">eliminar</a>
                 </td>
               </tr>
           @endforeach

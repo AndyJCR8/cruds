@@ -31,7 +31,7 @@ class postcontroller extends Controller
    */
   public function create()
   {
-    echo view('Dashboard.Post.create');
+    echo view('Dashboard.Post.create', ['post' => new post()]);
   }
 
   /**
@@ -55,7 +55,7 @@ class postcontroller extends Controller
    */
   public function show(post $post)
   {
-    //
+    //echo "post: " . $post;
     echo view("Dashboard.Post.show", ['post' => $post]);
   }
 
@@ -67,19 +67,20 @@ class postcontroller extends Controller
    */
   public function edit(post $post)
   {
-    //
+    echo view("Dashboard.Post.edit", ['post' => $post]);
   }
 
   /**
    * Update the specified resource in storage.
    *
-   * @param  \Illuminate\Http\Request  $request
+   * @param  \App\Http\Requests\StorePostPost  $request
    * @param  \App\Models\post  $post
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, post $post)
+  public function update(StorePostPost $request, post $post)
   {
-    //
+    $post->update($request->validated());
+    return back()->with('status', 'Se actualizó el post correctamente');
   }
 
   /**
@@ -90,6 +91,7 @@ class postcontroller extends Controller
    */
   public function destroy(post $post)
   {
-    //
+    $post->delete();
+    return back()->with('status', 'Post borrado');
   }
 }

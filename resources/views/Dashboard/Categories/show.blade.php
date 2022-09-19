@@ -17,13 +17,12 @@
     @csrf
     <div class="show-data-container container w-100">
       <div class="d-flex flex-column justify-content-center align-items-center text-center w-100">
-        <h2>Visualizar post</h2>
+        <h2>Visualizar categ</h2>
       </div>
       <div class="info w-25">
-        <p>{{$post->title}}</p>
-        <p>{{$post->slug}}</p>
-        <p>{{$post->content}}</p>
-        <p>{{$post->description}}</p>
+        
+        <p>{{$categories->title}}</p>
+        <p>{{$categories->slug}}</p>
       </div>
     </div>
   </div>

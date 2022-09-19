@@ -15,8 +15,8 @@ class categoriescontroller extends Controller
      */
     public function index()
     {
-        $cats = categories::orderBy('created_at', 'desc')->cursorpaginate(5);
-        echo view('Dashboard.Categories.index', ['cats' => $cats]);
+        $categories = categories::orderBy('created_at', 'desc')->cursorpaginate(5);
+        echo view('Dashboard.Categories.index', ['cats' => $categories]);
     }
 
     /**
@@ -54,7 +54,8 @@ class categoriescontroller extends Controller
      */
     public function show(categories $categories)
     {
-        //
+        //echo "Categoria: " . $categories;
+        echo view("Dashboard.Categories.show", ['categories' => $categories]);
     }
 
     /**
@@ -65,7 +66,7 @@ class categoriescontroller extends Controller
      */
     public function edit(categories $categories)
     {
-        //
+        echo "Cat: " . $categories;
     }
 
     /**

@@ -44,10 +44,14 @@
                 <td>
                   {{$post->updated_at->format('d-m-Y')}}
                 </td>
-                <td>
-                  <a href="{{route("post.show", $post->id)}}" class="btn btn-primary">ver</a>
-                  <a class="btn btn-warning">editar</a>
-                  <a class="btn btn-danger">eliminar</a>
+                <td class="d-flex justify-content-center align-items-center">
+                  <a href="{{route("post.show", $post->id)}}" class="btn btn-primary mx-2">ver</a>
+                  <a href="{{route("post.edit", $post->id)}}" class="btn btn-warning mx-2">editar</a>
+                  <form class="mx-2" method="POST" action="{{route("post.destroy", $post->id)}}">
+                      @method('DELETE')
+                      @csrf
+                      <input type="submit" class="btn btn-danger" value="eliminar"/>
+                  </form>
                 </td>
               </tr>
           @endforeach
