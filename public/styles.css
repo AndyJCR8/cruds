@@ -25,6 +25,9 @@ html, body {
   height: 100%;
   margin: 0;
 }
+.modal {
+  color: #000 !important;
+}
 .bodyContainer {
   color: white;
   margin-top: 3rem;

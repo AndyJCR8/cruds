@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('categories', categoriescontroller::class);
 Route::resource('post', PostController::class);
-
+//Route::get('post/delete/{id}', [postcontroller::class, "deleteView"]);
 Route::get('/', function () {
     return view('welcome');
 })->name('home');

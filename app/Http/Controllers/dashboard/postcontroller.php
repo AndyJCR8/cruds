@@ -9,10 +9,6 @@ use Illuminate\Http\Request;
 
 class postcontroller extends Controller
 {
-  public function pruebaAction()
-  {
-    echo "Hola desde la funcion: pruebaAction";
-  }
   /**
    * Display a listing of the resource.
    *
@@ -82,6 +78,10 @@ class postcontroller extends Controller
     $post->update($request->validated());
     return back()->with('status', 'Se actualizó el post correctamente');
   }
+
+  /*public function deleteView($id)
+  {
+  }*/
 
   /**
    * Remove the specified resource from storage.
